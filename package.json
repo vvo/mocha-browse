@@ -1,0 +1,21 @@
+{
+  "name": "mocha-browser",
+  "version": "0.0.0",
+  "description": "Launch headless browsers on any mocha tests webpage, get results in console",
+  "main": "index.js",
+  "bin": {
+    "mocha-browser": "cli.js"
+  },
+  "dependencies": {
+    "xhr-write-stream": "~0.1.2",
+    "tap-finished": "0.0.0",
+    "http-proxy": "~0.10.3",
+    "request": "~2.22.0",
+    "browser-launcher": "~0.3.2"
+  },
+  "devDependencies": {
+    "jsonify": "0.0.0"
+  },
+  "author": "Vincent Voyer <vincent@zeroload.net>",
+  "license": "MIT"
+}
