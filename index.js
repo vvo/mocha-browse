@@ -82,14 +82,8 @@ function createProxy(url, webpageContent, ready, cb) {
 }
 
 function proxy(params, req, res) {
-  var httpProxy = require('http-proxy');
-  var proxy = new httpProxy.RoutingProxy();
-
-  req.headers.host = params.host;
-  proxy.proxyRequest(req, res, {
-      host: params.hostname,
-      port: params.port || 80
-  });
+  var request = require('request');
+  request.get(params.protocol + '//' + params.host + req.url).pipe(res);
 }
 
 function insertBundle(url, cb) {
