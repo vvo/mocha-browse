@@ -4,7 +4,7 @@
   "description": "Launch headless browsers on any mocha tests webpage, get results in console",
   "main": "index.js",
   "bin": {
-    "mocha-browser": "cli.js"
+    "mocha-browse": "cli.js"
   },
   "repository": {
     "type": "git",
