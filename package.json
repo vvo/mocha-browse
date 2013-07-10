@@ -1,6 +1,6 @@
 {
   "name": "mocha-browser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Launch headless browsers on any mocha tests webpage, get results in console",
   "main": "index.js",
   "bin": {
