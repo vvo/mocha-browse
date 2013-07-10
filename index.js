@@ -49,7 +49,7 @@ function createProxy(url, webpageContent, ready, cb) {
   var prelude = fs.readFileSync(__dirname + '/bundle.js', 'utf8');
 
   var server = http.createServer(function (req, res) {
-    if (req.url === params.pathname) {
+    if (req.url === params.path) {
       res.setHeader('content-type', 'text/html');
       res.end(webpageContent);
     } else if (/mocha.js$/.test(req.url)) {
