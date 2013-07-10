@@ -6,6 +6,10 @@
   "bin": {
     "mocha-browser": "cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vvo/mocha-browser.git"
+  },
   "dependencies": {
     "xhr-write-stream": "~0.1.2",
     "tap-finished": "0.0.0",
@@ -16,6 +20,6 @@
   "devDependencies": {
     "jsonify": "0.0.0"
   },
-  "author": "Vincent Voyer <vincent@zeroload.net>",
+  "author": "Vincent Voyer <vincent.voyer@gmail.com>",
   "license": "MIT"
 }
