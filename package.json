@@ -1,5 +1,5 @@
 {
-  "name": "mocha-browser",
+  "name": "mocha-browse",
   "version": "0.1.1",
   "description": "Launch headless browsers on any mocha tests webpage, get results in console",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:vvo/mocha-browser.git"
+    "url": "git@github.com:vvo/mocha-browse.git"
   },
   "dependencies": {
     "xhr-write-stream": "~0.1.2",
