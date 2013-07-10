@@ -8,7 +8,7 @@ mocha-browser http://chaijs.com/api/test/
 
 mocha-browser http://chaijs.com/api/test/ firefox
 mocha-browser http://chaijs.com/api/test/ chrome
-mocha-browser http://chaijs.com/api/test/ phantomjs
+mocha-browser http://chaijs.com/api/test/ phantom
 ```
 
 ## credits
