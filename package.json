@@ -14,7 +14,7 @@
     "xhr-write-stream": "~0.1.2",
     "tap-finished": "0.0.0",
     "request": "~2.22.0",
-    "browser-launcher": "~0.3.2"
+    "browser-launcher": "~0.3.3"
   },
   "devDependencies": {
     "jsonify": "0.0.0"
