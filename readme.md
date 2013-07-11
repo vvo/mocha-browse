@@ -1,14 +1,14 @@
-# mocha-browser
+# mocha-browse
 
 Launch mocha tests pages in real browsers, headless.
 
 ```shell
-npm install -g mocha-browser
-mocha-browser http://chaijs.com/api/test/
+npm install -g mocha-browse
+mocha-browse http://chaijs.com/api/test/
 
-mocha-browser http://chaijs.com/api/test/ firefox
-mocha-browser http://chaijs.com/api/test/ chrome
-mocha-browser http://chaijs.com/api/test/ phantom
+mocha-browse http://chaijs.com/api/test/ firefox
+mocha-browse http://chaijs.com/api/test/ chrome
+mocha-browse http://chaijs.com/api/test/ phantom
 ```
 
 ## credits

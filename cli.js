@@ -4,7 +4,7 @@ var url = process.argv[2];
 var browser = process.argv[3];
 
 if (!url) {
-	console.error('Usage: mocha-webpage-runner http://test.com');
+	console.error('Usage: mocha-browse http://chaijs.com/api/test/');
 	process.exit(1);
 }
 

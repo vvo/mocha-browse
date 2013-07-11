@@ -1,4 +1,5 @@
 var browser;
+var bundlePath = '/__mocha-browse-bundle.js';
 
 module.exports = function(url, askedBrowser, cb) {
   var params = require('url').parse(url);
@@ -68,7 +69,7 @@ function createProxy(url, webpageContent, ready, cb) {
           }));
       }));
       req.on('end', res.end.bind(res));
-    } else if (req.url === '/__mocha-webpage-runner-bundle.js') {
+    } else if (req.url === bundlePath) {
       res.setHeader('content-type', 'application/javascript');
       res.end(prelude);
     } else {
@@ -89,7 +90,7 @@ function proxy(params, req, res) {
 function insertBundle(url, cb) {
   var params = require('url').parse(url);
   var request = require('request');
-  var bundleScript = '<script src=/__mocha-webpage-runner-bundle.js></script>';
+  var bundleScript = '<script src=' + bundlePath + '></script>';
 
   request({
     url: params.href,
