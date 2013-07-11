@@ -8,7 +8,10 @@ if (!url) {
 	process.exit(1);
 }
 
-runner(url, browser, function(err) {
+runner({
+	url: url,
+	browser: browser
+}, function(err) {
 	if (err) {
 		console.error(err);
 		process.exit(1);

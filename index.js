@@ -1,16 +1,16 @@
 var browser;
 var bundlePath = '/__mocha-browse-bundle.js';
 
-module.exports = function(url, askedBrowser, cb) {
-  var params = require('url').parse(url);
+module.exports = function(opts, cb) {
+  var params = require('url').parse(opts.url);
 
-  insertBundle(url, function(err, webpageContent) {
+  insertBundle(opts.url, function(err, webpageContent) {
     if (err) {
       return cb(err)
     }
 
-    createProxy(url, webpageContent, function(err, proxyPort) {
-      launchBrowser(url, askedBrowser, proxyPort, cb);
+    createProxy(opts.url, webpageContent, opts.quiet, function(err, proxyPort) {
+      launchBrowser(opts.url, opts.browser, proxyPort, cb);
     }, cb);
   })
 }
@@ -40,7 +40,7 @@ function launchBrowser(to, askedBrowser, proxyPort, cb) {
   });
 }
 
-function createProxy(url, webpageContent, ready, cb) {
+function createProxy(url, webpageContent, quiet, ready, cb) {
   var params = require('url').parse(url);
 
   var finished = require('tap-finished');
@@ -57,16 +57,18 @@ function createProxy(url, webpageContent, ready, cb) {
       sendModifiedMocha(params, req, res);
     } else if (req.url === '/sock') {
       req.pipe(xws(function (stream) {
+        if (quiet !== true) {
           stream.pipe(process.stdout, { end: false });
-          stream.pipe(finished(function (results) {
-              if (results.ok) {
-                browser.kill();
-                cb(null);
-              }
-              else {
-                cb(new Error('Some tests did not pass'));
-              }
-          }));
+        }
+        stream.pipe(finished(function (results) {
+          browser.kill();
+          if (results.ok) {
+            cb(null);
+          }
+          else {
+            cb(new Error('Some tests did not pass on ' + url));
+          }
+        }));
       }));
       req.on('end', res.end.bind(res));
     } else if (req.url === bundlePath) {
